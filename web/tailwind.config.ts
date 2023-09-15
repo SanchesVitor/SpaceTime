@@ -1,6 +1,5 @@
-import type { Config } from 'tailwindcss';
-
-const config: Config = {
+/** @type {import('tailwindcss').Config} */
+module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -50,9 +49,41 @@ const config: Config = {
           800: '#027435',
           900: '#025929',
         },
+        orange: {
+          50: '#ffefeb',
+          100: '#ffccc2',
+          200: '#ffb4a4',
+          300: '#ff927b',
+          400: '#ff7d61',
+          500: '#ff5c3a',
+          600: '#e85435',
+          700: '#b54129',
+          800: '#8c3320',
+          900: '#6b2718',
+        },
+        yellow: {
+          50: '#fff9ec',
+          100: '#ffebc4',
+          200: '#ffe2a7',
+          300: '#ffd47f',
+          400: '#ffcc66',
+          500: '#ffbf40',
+          600: '#e8ae3a',
+          700: '#b5882d',
+          800: '#8c6923',
+          900: '#6b501b',
+        },
+      },
+
+      backgroundImage: {
+        stripes:
+          'linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1) 12.5%, transparent 12.5%, transparent)',
+      },
+
+      blur: {
+        full: '194px',
       },
     },
   },
   plugins: [],
 };
-export default config;
