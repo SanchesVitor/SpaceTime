@@ -8,7 +8,7 @@ module.exports = {
         body: 'Roboto_400Regular',
         alt: 'BaiJamjuree_700Bold',
       },
-
+     
       colors: {
         gray: {
           50: '#eaeaea',
