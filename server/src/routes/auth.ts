@@ -41,7 +41,7 @@ export async function authRoutes(app: FastifyInstance) {
       avatar_url: z.string().url(),
     });
 
-    const userInfo = userSchema.parse(userResponse);
+    const userInfo = userSchema.parse(userResponse.data);
 
     let user = await prisma.user.findUnique({
       where: {
@@ -60,8 +60,19 @@ export async function authRoutes(app: FastifyInstance) {
       });
     }
 
+    const token = app.jwt.sign(
+      {
+        name: user.name,
+        avatarUrl: user.avatarUrl,
+      },
+      {
+        sub: user.id,
+        expiresIn: '30 days',
+      }
+    );
+
     return {
-      user,
+      token,
     };
   });
 }
